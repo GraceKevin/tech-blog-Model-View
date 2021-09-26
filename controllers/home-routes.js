@@ -6,6 +6,12 @@ const { Post, User, Comment } = require('../models');
 router.get('/', async (req, res) => {
   console.log('======================');
   Post.findAll({
+    attributes:[
+      'id',
+      'post_url',
+      'title',
+      'created_at'
+    ],
     include: 
     [
       {
@@ -43,6 +49,12 @@ router.get('/post/:id', (req, res) => {
     {
       id: req.params.id
     },
+    attributes: [
+      'id', 
+      'post_url',
+      'title',
+      'created_at'
+    ],
     include: 
     [
       {
@@ -83,7 +95,6 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-
   res.render('login');
 });
 

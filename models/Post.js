@@ -16,7 +16,6 @@ Post.init (
     {
         type: DataTypes.STRING,
         allowNull: false,
-
     },
     user_id: 
     {
@@ -28,11 +27,8 @@ Post.init (
     },
     post_url: 
     {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            isUrl: true
-        }
     }
     },
     {

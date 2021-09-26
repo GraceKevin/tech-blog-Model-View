@@ -6,7 +6,11 @@ const withAuth = require('../../utils/auth');
 
 // Setup router for get
 router.get('/', (req, res) => {
-    Comment.findAll()
+    Comment.findAll({
+      attributes: {
+        exclude: ['password']
+      }
+    })
       .then(dbCommentData => res.json(dbCommentData))
       .catch(err => {
         console.log(err);
@@ -16,16 +20,18 @@ router.get('/', (req, res) => {
 
   // Setup router for post
   router.post('/', withAuth, (req, res) => {
-    Comment.create({
-      comment_text: req.body.comment_text,
-      user_id: req.session.user_id,
-      post_id: req.body.post_id
+    if (req.session) {
+      Comment.create({
+        comment_text: req.body.comment_text,
+        user_id: req.session.user_id,
+        post_id: req.body.post_id
     })
       .then(dbCommentData => res.json(dbCommentData))
       .catch(err => {
         console.log(err);
         res.status(400).json(err);
       });
+    }
   });
 
   // Setup router to delete
