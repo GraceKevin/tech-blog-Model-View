@@ -39,9 +39,9 @@ router.get('/', (req, res) => {
       .catch(err => {
         console.log(err);
         res.status(404).json(err);
-        return
       });
   });
+
   // Router connection for Get
   router.get('/:id', (req, res) => {
     Post.findOne({
@@ -81,7 +81,7 @@ router.get('/', (req, res) => {
   router.post('/', withAuth, (req, res) => {
     Post.create({
       title: req.body.title,
-      post_content: req.body.post_url,
+      post_url: req.body.post_url,
       user_id: req.session.user_id
     })
       .then(dbPostData => res.json(dbPostData))
