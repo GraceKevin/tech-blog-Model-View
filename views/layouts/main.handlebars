@@ -9,5 +9,37 @@
 </head>
 
 <body>
-    {{{body}}}
-</body>
+ <div class="container">
+    <header>
+      <h1>
+        <a href="/">Tech Blog</a>
+      </h1>
+        <nav>
+          <span>
+            <a href="/">Homepage</a>
+          </span> 
+          {{#if loggedIn}}
+          <a href="/dashboard">Dashboard</a>
+          <button id="logout" class="btn">Logout</button>
+          {{else}}
+          <a href="/login">Login</a>
+          {{/if}}
+        </nav>
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+    
+    <footer>
+      Created by Kevin Grace
+    </footer>
+    
+  </div>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+  
+  </body>
+
+</html>

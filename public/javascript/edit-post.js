@@ -10,16 +10,18 @@ async function editFormHandler(event) {
       body: JSON.stringify({
         title
       }),
-      headers: {
+      headers: 
+      {
         'Content-Type': 'application/json'
       }
     });
 
     if (response.ok) {
       document.location.replace('/dashboard/');
-    } else {
+    } 
+    else {
       alert(response.statusText);
-    }
   }
+}
 
   document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);

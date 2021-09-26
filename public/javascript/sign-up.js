@@ -18,10 +18,11 @@ async function signUpFormHandler(event) {
        if (response.ok) {
            alert('The account has been created. Logging in');
            document.location.replace('/dashboard')
-       } else {
+       } 
+       else {
            alert(response.statusText)
        }
     }
+}
 
 document.querySelector('signup-form').addEventListener('submit', signUpFormHandler);
-}

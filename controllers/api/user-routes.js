@@ -1,7 +1,7 @@
 // Also pulled from Module 14
 
 const router = require('express').Router();
-const { User, Post, Comment, Vote } = require('../../models');
+const { User, Post, Comment,  } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -34,17 +34,11 @@ router.get('/:id', (req, res) => {
           attributes: ['title']
         }
       },
-      {
-        model: Post,
-        attributes: ['title'],
-        through: Vote,
-        as: 'voted_posts'
-      }
     ]
   })
     .then(dbUserData => {
       if (!dbUserData) {
-        res.status(404).json({ message: 'No user found with this id' });
+        res.status(404).json({ message: 'Unable to locate user based on ID' });
         return;
       }
       res.json(dbUserData);
@@ -81,16 +75,14 @@ router.post('/login', (req, res) => {
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
-      email: req.body.email
+      email: req.body.username
     }
   }).then(dbUserData => {
     if (!dbUserData) {
-      res.status(400).json({ message: 'No user with that email address!' });
+      res.status(400).json({ message: 'Unable to locate username.' });
       return;
     }
-
     const validPassword = dbUserData.checkPassword(req.body.password);
-
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect password!' });
       return;
@@ -123,13 +115,14 @@ router.put('/:id', (req, res) => {
   // pass in req.body instead to only update what's passed through
   User.update(req.body, {
     individualHooks: true,
-    where: {
+    where: 
+    {
       id: req.params.id
     }
   })
     .then(dbUserData => {
       if (!dbUserData) {
-        res.status(404).json({ message: 'No user found with this id' });
+        res.status(404).json({ message: 'Unable to locate user.' });
         return;
       }
       res.json(dbUserData);
@@ -142,13 +135,14 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   User.destroy({
-    where: {
+    where: 
+    {
       id: req.params.id
     }
   })
     .then(dbUserData => {
       if (!dbUserData) {
-        res.status(404).json({ message: 'No user found with this id' });
+        res.status(404).json({ message: 'Unable to locate user.' });
         return;
       }
       res.json(dbUserData);
