@@ -1,7 +1,26 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../public/stylesheet/style.css">
+
 <section class="new-post">
     <h2>Create a New Post</h2>
     <button type="submit" class="btn" id="create-post"> Create New Post</button>
 </section>
+
+<div class="container" id="post-card">
+  <div class="card-body" id="card-body">
+    <form class="text-center form-post-body">
+      <div class="label">
+        <label for="post-title">Post Title</label>
+        <input type="text" id="post-title" name="post-title"/>
+      </div>
+      <div class="content">
+        <label for="post-url">Insert Content</label>
+        <input id="post-url" name="post-url" />
+      </div>
+      <button type="submit" class="btn">Submit Post</button>
+    </form>
+  </div>
+</div>
 
 
 {{#if posts.length}}

@@ -1,45 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="../../public/stylesheet/style.css">
+
 </head>
 
 <body>
- <div class="container">
+
+  <div class="wrapper">
+
     <header>
-      <h1>
-        <a href="/">Tech Blog</a>
-      </h1>
-        <nav>
-          <span>
-            <a href="/">Homepage</a>
-          </span> 
-          {{#if loggedIn}}
-          <a href="/dashboard">Dashboard</a>
-          <button id="logout" class="btn">Logout</button>
-          {{else}}
-          <a href="/login">Login</a>
-          {{/if}}
-        </nav>
-    </header>
+        <nav class="navbar">
+  <a href="/"><button class="btn">Homepage</button></a>
+  {{#if loggedIn}}
+  <a href="/dashboard"><button class="btn">Dashboard</button></a>
+  <button id="logout" class="btn">Logout</button>
+  {{else}}
+  <a href="/login"><button class="btn">Login Here</button></a>
+  {{/if}}
+</nav>
+
+</header>
+
+<div class="container">
+  <h2 class="text-center">Tech Blog</h2>
+</div>
+      
+    
     <main>
       {{{ body }}}
     </main>
-    
-    <footer>
-      Created by Kevin Grace
+
+    <footer class="footer">
+      <h4 class="text-center" id="footer">Thanks for visiting today.</h4>
     </footer>
-    
   </div>
 
-    {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
-    {{/if}}
-  
-  </body>
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+</body>
 
 </html>

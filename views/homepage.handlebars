@@ -1,5 +1,11 @@
-<div>
-    <h1>
-        Homepage!
-    </h1>
-</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../public/stylesheet/style.css">
+
+
+<ol class="post-list">
+    {{#each posts as |post|}}
+    <li>
+        {{> post-info post}}
+    </li>
+    {{/each}}
+</ol>

@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../../public/stylesheet/style.css">
+
+<div class="comments">
+
+  {{#each this}}
+  <section class="comment">
+    <div class="meta">
+      Comment by: {{user.username}} on {{format_date created_at}}
+    </div>
+    <div class="text">
+      {{comment_text}}
+    </div>
+  </section>
+  {{/each}}
+
+</div>

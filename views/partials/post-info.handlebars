@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../../public/stylesheet/style.css"
+
+<article class="post">
+
+      <div class="title">
+        <h2>{{title}}</h2>
+      </div>
+
+      <div>
+        <h4>Content: </h4>
+        <span> {{post_url}}</span>
+      </div>
+
+      <div class="meta py-2">
+        <h4>Post created by:</h4> {{user.username}} on
+        {{format_date created_at}}
+        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    </div>
+
+</article>
