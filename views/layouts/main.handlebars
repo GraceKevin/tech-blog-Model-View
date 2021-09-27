@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title >Tech Blog</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="../../public/stylesheet/style.css">
+  <link rel="stylesheet" href="/stylesheet/style.css">
 
 </head>
 
@@ -17,12 +17,12 @@
 
     <header>
         <nav class="navbar bg-dark">
-  <a href="/"><button class="btn bg-success">Homepage</button></a>
+  <a href="/"><button class="btn bg-success text-dark">Homepage</button></a>
   {{#if loggedIn}}
-  <a href="/dashboard"><button class="btn">Dashboard</button></a>
-  <button id="logout" class="btn">Logout</button>
+  <a href="/dashboard"><button class="btn text-dark btn-success">Dashboard</button></a>
+  <button id="logout" class="btn text-dark btn-success">Logout</button>
   {{else}}
-  <a href="/login"><button class="btn bg-success">Login Here</button></a>
+  <a href="/login"><button class="btn bg-success">Login</button></a>
   {{/if}}
 </nav>
 
