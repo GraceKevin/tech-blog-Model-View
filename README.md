@@ -16,8 +16,13 @@
   *  You may  reach out to me directly at kgrace90@yahoo.com for any questions.
   # Images
   
+  ### Create Example
+  ![create](https://user-images.githubusercontent.com/83180774/134841056-58fee1ed-0553-4f93-86de-46639942f0a7.png)
+  ### Homepage Example
+  ![homepage](https://user-images.githubusercontent.com/83180774/134841071-4a31266d-170c-448d-9dec-af75b52e26ea.png)
+  ### Dashboard Example
+  ![dashboard](https://user-images.githubusercontent.com/83180774/134841066-21f7ebd9-edad-43a8-980e-79de2ec71c85.png)
 
-  
   * You can see more of my work by searching my username: GraceKevin
   * Or by accessing my Github [here](https://github.com/GraceKevin)
 
